@@ -1,0 +1,27 @@
+{
+  "feature": "feature-name",
+  "sprints": [
+    {
+      "id": 1,
+      "name": "Sprint 1",
+      "goal": "Core functionality for [feature]",
+      "start_date": "YYYY-MM-DD",
+      "end_date": "YYYY-MM-DD",
+      "status": "planned",
+      "stories": [
+        {
+          "id": "US-001",
+          "title": "[Story title]",
+          "status": "todo",
+          "assignee": "",
+          "story_points": 0,
+          "tasks_completed": 0,
+          "tasks_total": 0,
+          "notes": ""
+        }
+      ],
+      "velocity": 0,
+      "retrospective": ""
+    }
+  ]
+}

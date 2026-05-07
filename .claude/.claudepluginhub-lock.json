@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "collections": {
+    "affaan-m/everything-claude-code": {
+      "identifier": "affaan-m/everything-claude-code",
+      "apiUrl": "",
+      "scope": "project",
+      "installedAt": "2026-04-28T04:15:58.343Z",
+      "updatedAt": "2026-04-28T04:15:58.343Z",
+      "components": {
+        "affaan-m/everything-claude-code:skills/java-coding-standards/SKILL.md": {
+          "source": "affaan-m/everything-claude-code",
+          "type": "skill",
+          "componentName": "java-coding-standards",
+          "sourcePath": "skills/java-coding-standards/SKILL.md",
+          "installedPath": "D:\\Project\\spending-workspace\\.claude\\skills\\java-coding-standards",
+          "hash": "04249f4ae014b997566e924a5b880a26a42925a2",
+          "configFile": null,
+          "configKeys": null,
+          "configFragment": null
+        }
+      }
+    }
+  }
+}
