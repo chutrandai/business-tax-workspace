@@ -11,6 +11,7 @@ import {
   XCircle,
   ShieldCheck
 } from 'lucide-react';
+import apiClient from '../api/apiClient';
 
 const Toast = ({ message, type, onClose }) => {
   const isSuccess = type === 'success';
@@ -137,21 +138,19 @@ export default function LoginPage() {
     setToast(null);
 
     try {
-      const response = await fetch('/api/v1/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, rememberMe }),
-      });
+      const response = await apiClient.post('/auth/login', { email, password, rememberMe });
+      const { data } = response.data;
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (data.accessToken) {
+        localStorage.setItem('accessToken', data.accessToken);
         setToast({ message: 'Welcome back! Redirecting...', type: 'success' });
-      } else {
-        setToast({ message: data.message || 'Login failed', type: 'error' });
+        setTimeout(() => {
+          window.location.href = '/dashboard';
+        }, 1000);
       }
     } catch (error) {
-      setToast({ message: 'Network error. Please try again.', type: 'error' });
+      const message = error.response?.data?.message || 'Network error. Please try again.';
+      setToast({ message, type: 'error' });
     } finally {
       setIsLoading(false);
       setTimeout(() => setToast(null), 3000);
